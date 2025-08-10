@@ -69,7 +69,7 @@ class LabelMe2COCO:
         return [[xmin, ymin], [xmax, ymin], [xmax, ymax], [xmin, ymax]]
 
     @staticmethod
-    def _bbox_from_points(points: List[List[float]]) -> List[float]]:
+    def _bbox_from_points(points: List[List[float]]) -> List[float]:
         xs = [p[0] for p in points]; ys = [p[1] for p in points]
         xmin, xmax = float(min(xs)), float(max(xs))
         ymin, ymax = float(min(ys)), float(max(ys))
