@@ -24,16 +24,17 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build (onefile with icon, windowed)
+        shell: cmd
         run: |
           pyinstaller ^
-            --name LabelMeCOCO ^
+            --name=LabelMeCOCO ^
             --noconfirm ^
             --windowed ^
             --onefile ^
-            --icon app.ico ^
+            --icon=app.ico ^
             --collect-all PyQt6 ^
             --collect-all cv2 ^
-            --hidden-import PyQt6.sip ^
+            --hidden-import=PyQt6.sip ^
             labelme_coco_gui_qt6.py
 
       - name: Upload artifact (exe)
